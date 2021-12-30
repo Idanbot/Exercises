@@ -40,7 +40,7 @@ public class RecursiveFibApproaches {
                 long tailN = input.nextLong();
                 start = System.currentTimeMillis();
 
-                System.out.println(tailFib(tailN, BigInteger.ZERO, BigInteger.ONE));
+                System.out.println(tailFib(tailN));
                 break;
 
             default:
@@ -94,10 +94,15 @@ public class RecursiveFibApproaches {
 
 
     //	BigInt Tail Recursion of Fibonacci value.
-    public static BigInteger tailFib(long n,BigInteger a, BigInteger b){
+    public static BigInteger tailFib(long n){
 
         if(n < 0)
             throw new IllegalArgumentException("Are you trying to trick me?");
+
+        return tailHelper(n,BigInteger.ZERO,BigInteger.ONE);
+    }
+
+    public static BigInteger tailHelper(long n,BigInteger a, BigInteger b){
 
         if(n == 0)
             return a;
@@ -105,6 +110,6 @@ public class RecursiveFibApproaches {
         if(n == 1)
             return b;
 
-        return tailFib(n-1,b,a.add(b));
+        return tailHelper(n-1,b,a.add(b));
     }
 }
