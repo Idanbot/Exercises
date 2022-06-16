@@ -18,7 +18,7 @@ public class SimpleCollatzEvaluator {
         System.out.println("Step " + step + " = " + x);
 
         // this is our end condition for the recursion,
-        // n the case X is 1, we stop.
+        // if the case X is 1, we stop.
         if (x == 1) {
             return;
         }
